@@ -22,14 +22,14 @@ const graphicsLayer = new GraphicsLayer();
 
 viewElement.map = new Map({ basemap: "arcgis/streets", layers: [graphicsLayer] });
 
-const point = {
-    //Create a point
-    type: "point",
-    longitude: -118.80657463861,
-    latitude: 34.0005930608889,
-    };
+// const point = {
+//     //Create a point
+//     type: "point",
+//     longitude: -118.80657463861,
+//     latitude: 34.0005930608889,
+//     };
 
-    const simpleMarkerSymbol = {
+const simpleMarkerSymbol = {
     type: "simple-marker",
     color: [226, 119, 40], // Orange
     outline: {
@@ -38,19 +38,40 @@ const point = {
     },
 };
 
-const pointGraphic = new Graphic({ geometry: point, symbol: simpleMarkerSymbol });
-graphicsLayer.add(pointGraphic);
+// const pointGraphic = new Graphic({ geometry: point, symbol: simpleMarkerSymbol });
+// graphicsLayer.add(pointGraphic);
 
+// Load landmarks from the local JSON file and create a point for each
+async function loadLandmarks() {
+    try {
+        const res = await fetch('landmarks.json');
+        if (!res.ok) throw new Error(`Failed to load landmarks.json: ${res.status}`);
+        const landmarks = await res.json();
 
-// const map = new Map({
-//     // Utilize estes estilos antigos/públicos que não pedem chave:
-//     basemap: "streets-vector" // ou "topo-vector", "satellite", "hybrid"
-// });
+        landmarks.forEach(lm => {
+            const geom = {
+                type: 'point',
+                longitude: lm.longitude,
+                latitude: lm.latitude
+            };
 
-// const view = new MapView({
-//     container: "viewDiv",
-//     map: map,
-//     zoom: 14,
-//     center: [-23.5133, 14.9177]
-// });
+            const attributes = {
+                Name: lm.name,
+                Category: lm.category,
+                Description: lm.description
+            };
 
+            const popupTemplate = {
+                title: '{Name}',
+                content: '{Description}<br/><b>Category:</b> {Category}'
+            };
+
+            const g = new Graphic({ geometry: geom, symbol: simpleMarkerSymbol, attributes, popupTemplate });
+            graphicsLayer.add(g);
+        });
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+loadLandmarks();
