@@ -1,0 +1,183 @@
+[
+
+    {
+        "name": "Praia Plateau",
+        "category": "Historical",
+        "latitude": 14.9180,
+        "longitude": -23.5090,
+        "description":
+            "The historic center of Praia and an important area of the city."
+    },
+
+    {
+        "name": "Praia City Hall",
+        "category": "Historical",
+        "latitude": 14.9187,
+        "longitude": -23.5095,
+        "description":
+            "An important historic building located in the Plateau."
+    },
+
+    {
+        "name": "Presidential Palace",
+        "category": "Historical",
+        "latitude": 14.9168,
+        "longitude": -23.5083,
+        "description":
+            "An important governmental and historical building in Praia."
+    },
+
+    {
+        "name": "National Library of Cape Verde",
+        "category": "Cultural",
+        "latitude": 14.9188,
+        "longitude": -23.5105,
+        "description":
+            "A cultural and educational institution in Praia."
+    },
+
+    {
+        "name": "Ethnographic Museum",
+        "category": "Museum",
+        "latitude": 14.9165,
+        "longitude": -23.5107,
+        "description":
+            "A museum dedicated to Cape Verdean culture and heritage."
+    },
+
+    {
+        "name": "Archaeological Museum of Praia",
+        "category": "Museum",
+        "latitude": 14.9158,
+        "longitude": -23.5080,
+        "description":
+            "A museum featuring archaeological and historical artifacts."
+    },
+
+    {
+        "name": "Nossa Senhora da Graça Church",
+        "category": "Religious",
+        "latitude": 14.9172,
+        "longitude": -23.5088,
+        "description":
+            "A historic church located in the Plateau area."
+    },
+
+    {
+        "name": "Sukupira Market",
+        "category": "Cultural",
+        "latitude": 14.9170,
+        "longitude": -23.5160,
+        "description":
+            "A well-known market and commercial area in Praia."
+    },
+
+    {
+        "name": "Saldina Park",
+        "category": "Park",
+        "latitude": 14.9185,
+        "longitude": -23.5150,
+        "description":
+            "A public green space in Praia."
+    },
+
+    {
+        "name": "Quebra Canela Beach",
+        "category": "Beach",
+        "latitude": 14.9058,
+        "longitude": -23.5117,
+        "description":
+            "A popular beach located near the city center."
+    },
+
+    {
+        "name": "Prainha Beach",
+        "category": "Beach",
+        "latitude": 14.9020,
+        "longitude": -23.5070,
+        "description":
+            "A well-known beach area in Praia."
+    },
+
+    {
+        "name": "Gamboa Beach",
+        "category": "Beach",
+        "latitude": 14.9135,
+        "longitude": -23.5050,
+        "description":
+            "A coastal area close to the center of Praia."
+    },
+
+    {
+        "name": "Praia Municipal Market",
+        "category": "Cultural",
+        "latitude": 14.9189,
+        "longitude": -23.5115,
+        "description":
+            "A traditional market where visitors can experience local commerce."
+    },
+
+    {
+        "name": "Alexandre Albuquerque Square",
+        "category": "Historical",
+        "latitude": 14.9182,
+        "longitude": -23.5094,
+        "description":
+            "A historic public square in the Plateau."
+    },
+
+    {
+        "name": "Diogo Gomes Monument",
+        "category": "Historical",
+        "latitude": 14.9160,
+        "longitude": -23.5085,
+        "description":
+            "A notable monument in Praia."
+    },
+
+    {
+        "name": "Cape Verde National Assembly",
+        "category": "Historical",
+        "latitude": 14.9164,
+        "longitude": -23.5100,
+        "description":
+            "The seat of the National Assembly of Cape Verde."
+    },
+
+    {
+        "name": "University of Cabo Verde",
+        "category": "Cultural",
+        "latitude": 14.9188,
+        "longitude": -23.5320,
+        "description":
+            "One of the country's main higher education institutions."
+    },
+
+    {
+        "name": "Cape Verde National Stadium",
+        "category": "Cultural",
+        "latitude": 14.9285,
+        "longitude": -23.5340,
+        "description":
+            "A major sports facility in Praia."
+    },
+
+    {
+        "name": "Estádio da Várzea",
+        "category": "Cultural",
+        "latitude": 14.9145,
+        "longitude": -23.5205,
+        "description":
+            "A sports stadium located in Praia."
+    },
+
+    {
+        "name": "Praia Port",
+        "category": "Historical",
+        "latitude": 14.9060,
+        "longitude": -23.5000,
+        "description":
+            "The port area of Praia and an important transportation location."
+    }
+
+]

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Local Landmarks Map - Praia, Cabo Verde</title>
+
+    <script>
+        var esriConfig = {
+            apiKey: "AAPTaiWucmQ_ZW3yfZhHoGFcw1A..Sm_xDwPzoDcuznNiy-jRrlT7hhBOm0-hMkpmGrNgwcBvIb_zGHeCe7EIcb4surxAZY1TNfXrLxV_zyQqXqUnE9PxZIXC-Vh4ywOJ6TwQULe7B_Au9UGlycZ1B8SbUssEUvflFKdoxaDOWXOw7rTq6mzTOyZRoqIMjQZjBySoc7Q6pXbej2WjY2aVfqtgPEUo258wqJiTdmdafHptDX8UIm5kSHMMjDiAJh0gTdwJwPUiv45jQFn2KsgtEYqMAT1_8hJjdndf",
+        };
+    </script>
+
+    <!-- ArcGIS Maps SDK for JavaScript 5.1 -->
+    <script type="module" src="https://js.arcgis.com/5.1/"></script>
+
+    <!-- ArcGIS CSS theme (required for popups, widgets, and correct positioning) -->
+    <link rel="stylesheet" href="https://js.arcgis.com/5.1/esri/themes/light/main.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Local Landmarks Map</h1>
+        <p>Explore notable landmarks in Praia, Cabo Verde</p>
+    </header>
+
+    <main>
+
+        <section class="controls">
+
+            <label for="categoryFilter">
+                Filter landmarks:
+            </label>
+
+            <select id="categoryFilter">
+                <option value="All">All Landmarks</option>
+                <option value="Historical">Historical</option>
+                <option value="Museum">Museum</option>
+                <option value="Park">Park</option>
+                <option value="Beach">Beach</option>
+                <option value="Religious">Religious</option>
+                <option value="Cultural">Cultural</option>
+            </select>
+
+        </section>
+
+        <div id="viewDiv">
+            <arcgis-map center="-23.5133, 14.9177" zoom="13">
+                <arcgis-zoom slot="top-left"></arcgis-zoom>"
+            </arcgis-map>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Local Landmarks Map | Praia, Cabo Verde</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>
