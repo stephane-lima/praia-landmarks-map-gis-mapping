@@ -1,69 +1,174 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    color: #333;
 }
+
+/* ------------------------------
+   HEADER
+--------------------------------*/
 
 header {
     background-color: #1f4e79;
     color: white;
-    text-align: center;
     padding: 20px;
+    text-align: center;
 }
 
 header h1 {
-    margin-bottom: 8px;
+    margin: 0 0 8px;
 }
 
 header p {
-    font-size: 16px;
+    margin: 0;
 }
+
+/* ------------------------------
+   CONTROLS
+--------------------------------*/
 
 .controls {
-    background-color: white;
-    padding: 15px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 10px;
+    align-items: center;
+    padding: 15px;
+    background-color: white;
+    border-bottom: 1px solid #ccc;
 }
 
-.controls label {
-    font-weight: bold;
-}
-
-#categoryFilter {
-    padding: 8px 12px;
-    font-size: 16px;
+.controls select,
+.controls input,
+.controls button {
+    padding: 10px;
     border: 1px solid #aaa;
     border-radius: 5px;
+    font-size: 14px;
 }
 
-#viewDiv {
-    width: 100%;
-    height: 67vh;
+.controls input {
+    width: 300px;
 }
 
-footer {
+.controls button {
+    cursor: pointer;
     background-color: #1f4e79;
     color: white;
-    text-align: center;
-    padding: 12px;
+    border: none;
 }
 
-@media (max-width: 600px) {
+.controls button:hover {
+    background-color: #163a5b;
+}
 
-    .controls {
+/* ------------------------------
+   MAIN LAYOUT
+--------------------------------*/
+
+main {
+    display: flex;
+    height: calc(100vh - 150px)
+}
+
+/* ------------------------------
+   SIDEBAR
+--------------------------------*/
+
+#sidebar {
+    width: 320px;
+    background-color: white;
+    padding: 15px;
+    overflow-y: auto;
+    border-right: 1px solid #ccc;
+}
+
+#sidebar h2 {
+    margin-top: 0;
+}
+
+#landmarkCount {
+    color: #555;
+    font-size: 14px;
+}
+
+/* ------------------------------
+   LANDMARK ITEMS
+--------------------------------*/
+
+.landmark-item {
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.landmark-item:hover {
+    background-color: #f0f0f0;
+}
+
+.landmark-item h3 {
+    margin: 0 0 5px;
+    font-size: 16px;
+}
+
+.landmark-item p {
+    margin: 4px 0;
+    font-size: 13px;
+}
+
+.category {
+    font-weight: bold;
+    color: #1f4e79;
+}
+
+/* ------------------------------
+   MAP
+--------------------------------*/
+
+#mapContainer {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+}
+
+arcgis-map {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ------------------------------
+   MOBILE
+--------------------------------*/
+
+@media (max-width: 700px) {
+
+    main {
         flex-direction: column;
+        height: auto;
     }
 
-    #viewDiv {
-        height: 62vh;
+    #sidebar {
+        width: 100%;
+        height: 280px;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+    }
+
+    #mapContainer {
+        height: 600px;
+    }
+
+    .controls {
+        flex-wrap: wrap;
+    }
+
+    .controls input {
+        width: 100%;
     }
 }

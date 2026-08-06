@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <title>Local Landmarks Map - Praia, Cabo Verde</title>
 
     <script>
@@ -12,55 +12,62 @@
         };
     </script>
 
-    <!-- ArcGIS Maps SDK for JavaScript 5.1 -->
     <script type="module" src="https://js.arcgis.com/5.1/"></script>
-
-    <!-- ArcGIS CSS theme (required for popups, widgets, and correct positioning) -->
-    <link rel="stylesheet" href="https://js.arcgis.com/5.1/esri/themes/light/main.css">
 
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
     <header>
         <h1>Local Landmarks Map</h1>
         <p>Explore notable landmarks in Praia, Cabo Verde</p>
     </header>
 
+    <section class="controls">
+        <label for="categoryFilter">Category:</label>
+
+        <select id="categoryFilter">
+            <option value="All">All</option>
+            <option value="Historical">Historical</option>
+            <option value="Museum">Museum</option>
+            <option value="Park">Park</option>
+            <option value="Beach">Beach</option>
+            <option value="Religious">Religious</option>
+            <option value="Cultural">Cultural</option>
+        </select>
+
+        <input type="text" id="searchBox" placeholder="Search landmarks...">
+
+        <button id="resetButton">Reset</button>
+    </section>
+
     <main>
+        <aside id="sidebar">
+            <h2>Landmarks</h2>
+            <p id="landmarkCount">0 Landmarks</p>
 
-        <section class="controls">
+            <div id="landmarkList"></div>
+        </aside>
 
-            <label for="categoryFilter">
-                Filter landmarks:
-            </label>
+        <section id="mapContainer">
+            <!-- Modern ArcGIS Map Component -->
+            <arcgis-map 
+                center="-23.5133, 14.9177" 
+                zoom="13"
+            >
+                <!-- Modern Zoom Component -->
+                <arcgis-zoom slot="top-left"></arcgis-zoom>
 
-            <select id="categoryFilter">
-                <option value="All">All Landmarks</option>
-                <option value="Historical">Historical</option>
-                <option value="Museum">Museum</option>
-                <option value="Park">Park</option>
-                <option value="Beach">Beach</option>
-                <option value="Religious">Religious</option>
-                <option value="Cultural">Cultural</option>
-            </select>
+                <!-- Modern Search Component -->
+                <!-- <arcgis-search id="arcgisSearch" slot="top-right"></arcgis-search> -->
 
-        </section>
-
-        <div id="viewDiv">
-            <arcgis-map basemap="arcgis/streets" center="-23.5133, 14.9177" zoom="11">
-                <arcgis-zoom slot="top-left"></arcgis-zoom>"
+                <!-- Modern Popup Component -->
+                <!-- <arcgis-popup slot="popup"></arcgis-popup> -->
             </arcgis-map>
-        </div>
+            
+        </section>
 
     </main>
 
-    <footer>
-        <p>Local Landmarks Map | Praia, Cabo Verde</p>
-    </footer>
-
     <script type="module" src="script.js"></script>
-
 </body>
 </html>
