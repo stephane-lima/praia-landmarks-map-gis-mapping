@@ -6,12 +6,14 @@
     
     <title>Local Landmarks Map - Praia, Cabo Verde</title>
 
+    <!-- Configure ArcGIS API key for map services -->
     <script>
         var esriConfig = {
             apiKey: "AAPTaiWucmQ_ZW3yfZhHoGFcw1A..Sm_xDwPzoDcuznNiy-jRrlT7hhBOm0-hMkpmGrNgwcBvIb_zGHeCe7EIcb4surxAZY1TNfXrLxV_zyQqXqUnE9PxZIXC-Vh4ywOJ6TwQULe7B_Au9UGlycZ1B8SbUssEUvflFKdoxaDOWXOw7rTq6mzTOyZRoqIMjQZjBySoc7Q6pXbej2WjY2aVfqtgPEUo258wqJiTdmdafHptDX8UIm5kSHMMjDiAJh0gTdwJwPUiv45jQFn2KsgtEYqMAT1_8hJjdndf",
         };
     </script>
 
+    <!-- Load the ArcGIS JavaScript API modules -->
     <script type="module" src="https://js.arcgis.com/5.1/"></script>
 
     <link rel="stylesheet" href="style.css">
@@ -22,6 +24,7 @@
         <p>Explore notable landmarks in Praia, Cabo Verde</p>
     </header>
 
+    <!-- Controls for filtering landmarks by category and search text -->
     <section class="controls">
         <label for="categoryFilter">Category:</label>
 
@@ -41,6 +44,7 @@
     </section>
 
     <main>
+        <!-- Sidebar that shows the current list of landmarks and count -->
         <aside id="sidebar">
             <h2>Landmarks</h2>
             <p id="landmarkCount">0 Landmarks</p>
@@ -48,6 +52,7 @@
             <div id="landmarkList"></div>
         </aside>
 
+        <!-- Container that holds the ArcGIS map web component -->
         <section id="mapContainer">
             <!-- Modern ArcGIS Map Component -->
             <arcgis-map 
@@ -58,16 +63,15 @@
                 <arcgis-zoom slot="top-left"></arcgis-zoom>
 
                 <!-- Modern Search Component -->
-                <!-- <arcgis-search id="arcgisSearch" slot="top-right"></arcgis-search> -->
+                <arcgis-search id="arcgisSearch" slot="top-right"></arcgis-search>
 
-                <!-- Modern Popup Component -->
-                <!-- <arcgis-popup slot="popup"></arcgis-popup> -->
             </arcgis-map>
             
         </section>
 
     </main>
 
+    <!-- Main application script for map setup and UI interaction -->
     <script type="module" src="script.js"></script>
 </body>
 </html>
