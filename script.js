@@ -4,12 +4,13 @@ const [Graphic, Map, GraphicsLayer] = await $arcgis.import([
     "@arcgis/core/layers/GraphicsLayer.js"
 ]);
 
-// Get Map Component
+// Locate the ArcGIS web component in the page.
 const mapElement = document.querySelector("arcgis-map");
 
-// Create Landmark Graphics Layer
+// Create a graphics layer to hold all landmark markers.
 const graphicsLayer = new GraphicsLayer();
 
+// Initialize the map with a navigation basemap and attach the landmark layer.
 mapElement.map = new Map({ basemap: "streets-navigation-vector", layers: [graphicsLayer] });
 
 
@@ -102,14 +103,19 @@ function createLandmarkGraphic(landmark) {
     };
 
     return new Graphic({
+        // Set the point geometry for the landmark marker.
         geometry: point,
+        // Use the category-specific symbol color.
         symbol: getSymbol(landmark.category),
+        // Attach the original landmark data to the graphic.
         atributes: landmark,
         popupTemplate: {
+            // Use the landmark name as the popup title.
             title: `${landmark.name}`,
             content: [
                 {
                     type: "text",
+                    // Display category and description in the popup.
                     text: `
                         <b>Category:</b>
                         ${landmark.category}
@@ -147,10 +153,13 @@ function updateSidebar(data) {
     count.textContent = `${data.length} landmark${data.length !== 1 ? "s" : ""}`;
 
     data.forEach(landmark => {
+        // Create a container element for the sidebar entry.
         const item = document.createElement("div");
 
+        // Apply the sidebar item style class.
         item.className = "landmark-item";
 
+        // Use the landmark data to build the HTML content for the list.
         item.innerHTML = `
             <h3>${landmark.name}</h3>
 
@@ -172,10 +181,13 @@ function filterLandmarks() {
     const search = document.getElementById("searchBox").value.trim().toLowerCase();
 
     const filtered = landmarks.filter(landmark => {
+        // Keep every landmark when the selected category is 'All'.
+        // Otherwise only match the exact selected category.
         const matchesCategory = 
             category === "All" || 
             landmark.category === category;
 
+        // Match landmark name, description, or category against the search term.
         const matchesSearch =
             landmark.name.toLowerCase().includes(search)
             ||
